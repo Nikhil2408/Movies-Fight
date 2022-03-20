@@ -1,6 +1,6 @@
 async function getMoviesData(search_str)
 {
-    const response = await axios.get("http://www.omdbapi.com/", {
+    const response = await axios.get("https://www.omdbapi.com/", {
         params: {
             apikey: "dc83f487",
             s : `${search_str}`
@@ -15,7 +15,7 @@ let leftMovieDetails;
 let rightMovieDetails;
 async function getMovieDetails(movieId, detail, side)
 {
-    const response = await axios.get("http://www.omdbapi.com/", {
+    const response = await axios.get("https://www.omdbapi.com/", {
        params: {
            apikey: "dc83f487",
            i : `${movieId}`
