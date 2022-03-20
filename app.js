@@ -78,7 +78,7 @@ function compare()
     let rightdetail;
     for(detail in leftDetailList)
     {
-        if(detail === '0')
+        if(detail === '0' || detail === "entries")
             continue;
         leftdetail = parseInt(leftDetailList[detail].getAttribute("data-value"));
         rightdetail = parseInt(rightDetailList[detail].getAttribute("data-value"));
