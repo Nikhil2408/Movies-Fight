@@ -12,6 +12,7 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
+  <title>Movies Fight</title>
   <body>
 
     <section class="hero is-primary is-bold">
@@ -28,9 +29,25 @@
     </section>
 
     <div class="container">
-        <div class="autocomplete"></div>
+        <div class = "columns">
+            <div class="column">
+                <div id = "left-autocomplete"></div>
+                <div id = "left-details"></div>
+            </div>
+            <div class="column">
+                <div id = "right-autocomplete"></div>
+                <div id = "right-details"></div>
+            </div>
+        </div>
+
+        <div class="column is-half notification tutorial is-primary is-active">
+            <h3 class="title">Search for a movie on both sides to get started</h3>
+            <p class="subtitle">We will compare the movies for you.</p>
+        </div>
     </div>
 
+    <script src="displayMovieData.js"></script>
+    <script src="autocomplete.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
