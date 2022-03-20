@@ -74,24 +74,24 @@ function compare()
 {
     const leftDetailList = document.querySelectorAll("#left-details .notification");
     const rightDetailList = document.querySelectorAll("#right-details .notification");
-    let leftdetail;
-    let rightdetail;
-    for(detail in leftDetailList)
-    {
-        if(detail === '0' || detail === "entries")
-            continue;
-        leftdetail = parseInt(leftDetailList[detail].getAttribute("data-value"));
-        rightdetail = parseInt(rightDetailList[detail].getAttribute("data-value"));
-        if(leftdetail > rightdetail)
+    let leftDetail;
+    let rightDetail;
+
+    leftDetailList.forEach((detail, index) => {
+        if(index === 0)
+            return;
+        leftDetail = parseInt(leftDetailList[index].getAttribute("data-value"));
+        rightDetail = parseInt(rightDetailList[index].getAttribute("data-value"));
+
+        if(leftDetail > rightDetail)
         {
-            rightDetailList[detail].classList.add("is-warning");
-            rightDetailList[detail].classList.remove("is-primary");
+            rightDetailList[index].classList.add("is-danger");
+            rightDetailList[index].classList.remove("is-primary");
         }
-            
-        else{
-            leftDetailList[detail].classList.add("is-warning");
-            leftDetailList[detail].classList.remove("is-primary")
+        else
+        {
+            leftDetailList[index].classList.add("is-danger");
+            leftDetailList[index].classList.remove("is-primary");
         }
-            
-    }
+    })
 }

@@ -1,5 +1,13 @@
 function displayMovieData(movieData)
 {
+    if(movieData.BoxOffice === undefined)
+        movieData.BoxOffice = "N/A";
+    if(movieData.Metascore === undefined)
+        movieData.Metascore = "N/A";
+    if(movieData.imdbRating === undefined)
+        movieData.imdbRating = "N/A"
+    if(movieData.imdbVotes === undefined)
+        movieData.imdbVotes = "N/A";
     const boxOffice = parseInt(movieData.BoxOffice.replace("$", '').replaceAll(",", ""));
     const metaScore = parseInt(movieData.Metascore);
     const imdbRating = parseFloat(movieData.imdbRating);
